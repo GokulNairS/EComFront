@@ -5,7 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class HomeController {
+public class HomeController
+{
  @RequestMapping({"/","/home"})
  public String indexpage(Model M) {
 	 M.addAttribute("sliderpage",true);
@@ -20,11 +21,23 @@ public class HomeController {
  public String contactpage(Model M) {
 	 M.addAttribute("contactpage",true);
 	 return "index";
+	 
  }
 
- @RequestMapping("/register")
- public String registerpage(Model M) {
-	 M.addAttribute("registerpage",true);
+ @RequestMapping("/Login")
+ public String loginpage(Model M) {
+	 M.addAttribute("Loginpage",true);
+	 M.addAttribute("error",false);
+	 M.addAttribute("message","");
 	 return "index";
  }
+ @RequestMapping("/flogin")
+ public String floginpage(Model M) {
+	 M.addAttribute("fLoginpage",true);
+	 M.addAttribute("error",true);
+	 M.addAttribute("message","user name ,password incorrect");
+	 return "index";
+ }
+
+ 
 }

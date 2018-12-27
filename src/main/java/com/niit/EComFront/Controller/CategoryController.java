@@ -45,7 +45,7 @@ public class CategoryController {
 				cd.CreateCategory(category);
 				
 				
-				return "redirect:/";
+				return "redirect:/category";
 			} 
 			catch (Exception e) {
 				M.addAttribute("category", category);
@@ -62,17 +62,17 @@ public class CategoryController {
 	}
 	
 	@RequestMapping("/deletecategory")
-	public String deletecategory(@RequestParam ("category_id")int category_id,Model m)
+	public String deletecategory(@RequestParam ("category_name")String category_name,Model m)
 	{
-	Category c=cd.ViewOneCategory(category_id);
+	Category c=cd.ViewOneCategory(category_name);
 	cd.DeleteCategory(c);
 	return "redirect:/category";
 	}
 	
 	@RequestMapping("/editcategory")
-	public String editcategory(@RequestParam ("category_id")int category_id,Model M) {
+	public String editcategory(@RequestParam ("category_name")String category_name,Model M) {
 		M.addAttribute("editMode",true);
-		M.addAttribute("category",cd.ViewOneCategory(category_id));
+		M.addAttribute("category",cd.ViewOneCategory(category_name));
 		M.addAttribute("categorypage",true);
 
 		 M.addAttribute("catlist",cd.ViewAllCategory());
@@ -103,7 +103,7 @@ public class CategoryController {
 				cd.UpdateCategory(category);
 				
 				
-				return "redirect:/";
+				return "redirect:/category";
 			} 
 			catch (Exception e) {
 

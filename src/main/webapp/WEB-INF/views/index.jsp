@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html>
 <head>
@@ -21,15 +21,36 @@
 		<c:if test="${contactpage}">
 			<c:import url="contact.jsp"></c:import>
 		</c:if>
+		<c:if test="${cartpage}">
+			<c:import url="cart.jsp"></c:import>
+		</c:if>
+		<c:if test="${addresspage}">
+			<c:import url="address.jsp"></c:import>
+		</c:if>
+	
 		<c:if test="${categorypage}">
 			<c:import url="category.jsp"></c:import>
 		</c:if>
-		<c:if test="${productpage}">
-			<c:import url="Product.jsp"></c:import>
+		<c:if test="${productPage}">
+			<c:import url="product.jsp"></c:import>
+		</c:if>
+		<c:if test="${viewallproductpage}">
+			<c:import url="viewallproduct.jsp"></c:import>
 		</c:if>
 		<c:if test="${registerpage}">
 			<c:import url="register.jsp"></c:import>
 		</c:if>
+		<c:if test="${Loginpage}">
+			<c:import url="login.jsp"></c:import>
+		</c:if>
+		<c:if test="${fLoginpage}">
+			<c:import url="login.jsp"></c:import>
+		</c:if>
+		<c:if test="${viewallproductpage}">
+			<c:import url="viewallproduct.jsp"></c:import>
+		</c:if>
 	</div>
+	<c:import url="footer.jsp"></c:import>
+	
 </body>
 </html>
